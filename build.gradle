@@ -1,0 +1,32 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.user'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.hibernate.validator:hibernate-validator'
+	testCompile group: 'org.spockframework', name: 'spock-core', version: '2.0-M4-groovy-3.0'
+	testCompile group: 'org.spockframework', name: 'spock-spring', version: '2.0-M4-groovy-3.0'
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	runtimeOnly 'com.h2database:h2'
+	compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.7'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+    implementation 'org.jetbrains:annotations:15.0'
+}
+
+test {
+	useJUnitPlatform()
+}

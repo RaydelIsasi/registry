@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "fc7b98d7-7d3e-4df7-b2b6-64a1208cce85",
+		"name": "UserRegistry Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\" : \"admin\" ,\r\n\"password\" : \"Unad12\" \r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8090/userregistry/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"userregistry",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MDc5ODEyNTUsImlzcyI6Imh0dHBzOi8vdXNlcnJlZ2lzdHJ5LyIsInN1YiI6ImFkbWluIiwiZXhwIjoxNjA4ODQ1MjU1fQ.UYbmakfXaNJ63nSdNyzqcGukN3XSFtDwtM2LkUAol1d0yBYSOdz08svCT0rBgx3bt7MznR6NlCbooSn17ZjkwQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\" : \"Juan Rodriguez\" ,\r\n\"email\" : \" juan@rodriguez.org\" ,\r\n\"password\" : \"Hunter21\",\r\n\"phones\" : [\r\n{\r\n\"number\" : \"1234567\",\r\n\"citycode\" : \"1\",\r\n\"countrycode\" : \"57\"\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8090/userregistry/registeruser",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8090",
+					"path": [
+						"userregistry",
+						"registeruser"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
